@@ -1,0 +1,41 @@
+﻿@using Utad_Proj_.Models
+@model List<AppUserRoles>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Users</h1>
+
+<p>
+    <a asp-action="Create">Create New User</a>
+</p>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>Roles</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+        <tr>
+            <td>@user.UserName</td>
+            <td>@user.Email</td>
+            <td>@string.Join(" , ", user.Roles.ToList())</td>
+            <td>
+                <a class="btn btn-primary" asp-controller="Admin" asp-action="Manage" asp-route-userId="@user.UserId">Manage Roles</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-primary" style="width:auto">Back</a>
+

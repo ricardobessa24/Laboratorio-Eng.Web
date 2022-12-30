@@ -1,0 +1,15 @@
+﻿@using Utad_Proj_.Models
+@model List<AppUserRoles>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Manage</h1>
+
+<a class="btn btn-primary" asp-controller="Admin" asp-action="ManageIndex">Manage Users</a>
+<a class="btn btn-primary" asp-controller="Rooms" asp-action="Index">Manage Rooms</a>
+<a class="btn btn-primary" asp-controller="Movie_Session" asp-action="Index">Manage Sessions</a>
+<a class="btn btn-primary" asp-controller="Categories" asp-action="Index">Manage Categories</a>
+

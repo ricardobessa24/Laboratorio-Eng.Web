@@ -1,0 +1,10 @@
+﻿
+
+#comment-box, #post {
+    border: none;
+    border-radius: 5px;
+}
+
+    #post:hover {
+        background-color: white;
+    }
